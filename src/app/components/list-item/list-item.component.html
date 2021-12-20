@@ -1,0 +1,21 @@
+<li appDraggable
+    [model]="model"
+>
+  <span *ngIf="model.selected">
+    [Selected]
+  </span>
+
+  <span>
+    {{model.displayName}}
+  </span>
+
+  <div>
+    <button (click)="removeItem()">Remove</button>
+    <button (click)="toggleSelection()">Toggle Selection</button>
+  </div>
+
+  <div *ngIf="model.selected">
+    <button *ngIf="canMoveDown()" (click)="moveDown()">Move Down</button>
+    <button *ngIf="canMoveUp()" (click)="moveUp()">Move Up</button>
+  </div>
+</li>

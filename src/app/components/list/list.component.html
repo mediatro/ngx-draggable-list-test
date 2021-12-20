@@ -1,0 +1,9 @@
+<ul appSortable [itemsModel]="itemModel">
+
+  <app-list-item *ngFor="let item of itemModel"
+                 [model]="item"
+                 (onMove)="onItemMove(item, $event)"
+                 (onRemove)="onItemRemove(item)"
+  ></app-list-item>
+
+</ul>
